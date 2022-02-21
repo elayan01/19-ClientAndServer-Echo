@@ -98,7 +98,7 @@ public class InteractionPanelHandlerClient {
      * An den Server wird die Nachricht geschickt, die sich im TextField message befindet. Diese wird über das TestClient-Objekt client gesendet.
      */
     private void send(){
-        //TODO 06 Umsetzen!
+        //TODO 03 Umsetzen!
     }
 	
 	/**

@@ -17,23 +17,23 @@ public class TestServer extends Server{
         super(pPort);
         clients = new List<>();
         this.panelHandler = panel;
-        //TODO 02 Falls der Server offen ist, werden die Knöpfe im Panel angeschaltet: buttonsSwitch aufrufen. Ansonsten erfolgt eine Ausgabe, dass es ein Problem beim Starten gab.
+        //TODO 06 Falls der Server offen ist, werden die Knöpfe im Panel angeschaltet: buttonsSwitch aufrufen. Ansonsten erfolgt eine Ausgabe, dass es ein Problem beim Starten gab.
     }
 
     @Override
     public void processNewConnection(String pClientIP, int pClientPort) {
-        clients.append(pClientIP+":"+pClientPort); //TODO 03a Erläutern Sie, was hier passiert.
+        clients.append(pClientIP+":"+pClientPort); //TODO 07a Erläutern Sie, was hier passiert.
         panelHandler.displayNewConnection(pClientIP,pClientPort);
     }
 
     @Override
     public void processMessage(String pClientIP, int pClientPort, String pMessage) {
-        panelHandler.showProcessMessageContent(pClientIP,pClientPort,pMessage); //TODO 03b Erläutern Sie, was hier passiert.
+        panelHandler.showProcessMessageContent(pClientIP,pClientPort,pMessage); //TODO 07b Erläutern Sie, was hier passiert.
     }
 
     @Override
     public void processClosingConnection(String pClientIP, int pClientPort) {
-        //TODO 03c Erläutern Sie, was hier passiert.
+        //TODO 07c Erläutern Sie, was hier passiert.
 
         clients.toFirst();
         while (clients.hasAccess()){
@@ -62,7 +62,7 @@ public class TestServer extends Server{
      * @return String-Array mit Client-Informationen
      */
     public String[] getClients(){
-        //TODO 04 Ein Hoch auf die Standard-Listen/Array-Aufgaben! Bitte umsetzen.
+        //TODO 08 Ein Hoch auf die Standard-Listen/Array-Aufgaben! Bitte umsetzen.
         return new String[]{"0000:0000"};
     }
 }

@@ -16,18 +16,18 @@ public class TestClient extends Client{
 
         this.panelHandler = panelHandler;
 
-        //TODO 05 Falls eine Verbindung vorhanden ist, müssen die Knöpfe im panelHandler aktiviert werden mit der Methode switchButtons. Ansonsten muss eine Ausgabe erfolgen, die dem Nutzer mitteilt, dass es ein Verbindungsproblem gab und er bitte IP und Port prüft.
+        //TODO 02 Falls eine Verbindung vorhanden ist, müssen die Knöpfe im panelHandler aktiviert werden mit der Methode switchButtons. Ansonsten muss eine Ausgabe erfolgen, die dem Nutzer mitteilt, dass es ein Verbindungsproblem gab und er bitte IP und Port prüft.
 
     }
 
     @Override
     public void processMessage(String pMessage) {
-        //TODO 07 Die empfangene Nachricht wird einfach in der Client-Oberfläche ausgegeben. Eine eventuelle Auswertung kann danach hier in der Methode intern stattfinden.
+        //TODO 04 Die empfangene Nachricht wird einfach in der Client-Oberfläche ausgegeben. Eine eventuelle Auswertung kann danach hier in der Methode intern stattfinden.
 
     }
 
     @Override
     public void close(){
-        //TODO 08 Die Verbindung muss geschlossen und die Knöpfe im Panel abgeschaltet werden.
+        //TODO 05 Die Verbindung muss geschlossen und die Knöpfe im Panel abgeschaltet werden.
     }
 }
