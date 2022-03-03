@@ -18,6 +18,11 @@ public class TestServer extends Server{
         clients = new List<>();
         this.panelHandler = panel;
         //TODO 06 Falls der Server offen ist, werden die Knöpfe im Panel angeschaltet: buttonsSwitch aufrufen. Ansonsten erfolgt eine Ausgabe, dass es ein Problem beim Starten gab.
+        if (this.isOpen()){
+            panelHandler.buttonSwitch();
+        }else{
+            panelHandler.showProcessMessageContent("",0,"ERROR");
+        }
     }
 
     @Override
@@ -29,6 +34,7 @@ public class TestServer extends Server{
     @Override
     public void processMessage(String pClientIP, int pClientPort, String pMessage) {
         panelHandler.showProcessMessageContent(pClientIP,pClientPort,pMessage); //TODO 07b Erläutern Sie, was hier passiert.
+        this.send(pClientIP,pClientPort,new java.util.Date().toString()+":"+pClientIP+":"  +pMessage);
     }
 
     @Override
@@ -63,6 +69,18 @@ public class TestServer extends Server{
      */
     public String[] getClients(){
         //TODO 08 Ein Hoch auf die Standard-Listen/Array-Aufgaben! Bitte umsetzen.
-        return new String[]{"0000:0000"};
+        int count=0;
+        clients.toFirst();
+        while (clients.hasAccess()){
+            count++;
+            clients.next();
+        }
+        String[] array=new String[count];
+        clients.toFirst();
+        for (int i=0;i<array.length;i++){
+            array[i]=clients.getContent();
+        }
+        return array;
     }
+
 }

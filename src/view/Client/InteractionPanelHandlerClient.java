@@ -99,6 +99,7 @@ public class InteractionPanelHandlerClient {
      */
     private void send(){
         //TODO 03 Umsetzen!
+        client.send(message.getText());
     }
 	
 	/**
